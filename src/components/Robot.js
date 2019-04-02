@@ -3,18 +3,14 @@ import { Col, Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 
 const Robot = ({ id, name, email }) => {
   return (
-    <Col sm="3">
-        <div className="Robot">
-            <Card body inverse color="danger">
-                <CardBody>
-                    <CardTitle className="text-center font-weight-bold">{ name }</CardTitle>
-                </CardBody>
-                <img width="100%" src={`https://robohash.org/${id}?size=200x200`} alt="robot" />
-                <CardBody>
-                    <CardSubtitle className="text-center">{ email }</CardSubtitle>
-                </CardBody>
-            </Card>
-        </div>
+    <Col sm="4" className="centerd">
+        <Card body inverse color="danger">
+            <img src={`https://robohash.org/${id}?200x200`} alt="robot" />
+            <CardBody>
+                <CardTitle className="font-weight-bold">{ name }</CardTitle>
+                <CardSubtitle>{ email }</CardSubtitle>
+            </CardBody>
+        </Card>
     </Col>
   )
 }

@@ -5,7 +5,7 @@ import SearchBar from './components/SearchBar'
 import { Container, Row, Col } from 'reactstrap'
 
 class App extends Component {
-  
+
   state = {
     robots: [],
     search: ''
@@ -23,23 +23,24 @@ class App extends Component {
   }
 
   render() {
-    const { robots } = this.state;
+    const { robots, search } = this.state;
+    const filteredRobots = robots.filter(robot => robot.name.toLowerCase().includes(search.toLowerCase()));
     return (
-      <div>
-        <h1 className="title text-center display-1">Robots App</h1>     
+      <div className="App">
+        <h1 className="title display-1">Robots App</h1>
         <Container>
         <Row>
           <Col sm={{ size: 6, offset: 3 }}>
             <SearchBar HandelChange={ this.HandelSearch }/>
           </Col>
         </Row>
-          <Row>
-            <RobotList robots={ robots }/>
-          </Row>
+        <Row>
+          <RobotList robots={ filteredRobots }/>
+        </Row>
         </Container>
       </div>
     );
   }
 }
 
-export default App;
+export default App

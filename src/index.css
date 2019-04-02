@@ -2,6 +2,16 @@ html, body {
   background-color: blueviolet
 }
 
+.App {
+  text-align: center
+}
+
+.centerd {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 3rem;
+}
+
 input.form-control, input.form-control:focus {
   color: #dc3545
 }
@@ -12,9 +22,5 @@ input.form-control, input.form-control:focus {
 
 .title {
   color: white;
-  margin-bottom: 3rem;
-}
-
-.Robot {
   margin-bottom: 3rem;
 }
