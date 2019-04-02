@@ -2,6 +2,19 @@ html, body {
   background-color: blueviolet
 }
 
+input.form-control, input.form-control:focus {
+  color: #dc3545
+}
+
+.row {
+  margin-bottom: 2rem;
+}
+
 .title {
   color: white;
+  margin-bottom: 3rem;
+}
+
+.Robot {
+  margin-bottom: 3rem;
 }
