@@ -18,7 +18,7 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
-  HandelSearch = e => {
+  handelSearch = e => {
     this.setState({ search: e.target.value })
   }
 
@@ -31,7 +31,7 @@ class App extends Component {
         <Container>
           <Row className="mb-5">
             <Col sm={{ size: 6, offset: 3 }}>
-              <SearchBar HandelChange={ this.HandelSearch }/>
+              <SearchBar handelChange={ this.handelSearch }/>
             </Col>
           </Row>
           <Row className="mb-2">

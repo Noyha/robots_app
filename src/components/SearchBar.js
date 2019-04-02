@@ -1,12 +1,12 @@
 import React from 'react'
 import { Input } from 'reactstrap'
 
-const SearchBar = ({ HandelChange }) => {
+const SearchBar = ({ handelChange }) => {
   return (
       <Input 
         type="search" 
-        placeholder="Enter robot name..." 
-        onChange={HandelChange} 
+        placeholder="Search for robot..." 
+        onChange={ handelChange } 
         />
   )
 }
