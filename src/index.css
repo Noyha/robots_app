@@ -1,9 +1,12 @@
 html, body {
-  background-color: blueviolet
+  background-color: #0b0d35;
+  color: #074ea7!important;
 }
 
-.App {
-  text-align: center
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+.title {
+  font-family: 'Orbitron';
 }
 
 .centerd {
@@ -13,14 +16,24 @@ html, body {
 }
 
 input.form-control, input.form-control:focus {
-  color: #dc3545
+  color: #074ea7
 }
 
-.row {
-  margin-bottom: 2rem;
+.card {
+  /* background-color: #1a0058; */
+  background-color: #1261c3;
+  transition: transform .25s ease-out, -webkit-transform .25s ease-out;
 }
 
-.title {
-  color: white;
-  margin-bottom: 3rem;
+.card:hover {
+  transform: scale(1.12);
+}
+
+.card:active {
+  transform: scale(.9);
+}
+
+.card-title {
+  font-size: 1.3rem;
+  color: #0b0d35;
 }
