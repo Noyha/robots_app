@@ -20,7 +20,6 @@ input.form-control, input.form-control:focus {
 }
 
 .card {
-  /* background-color: #1a0058; */
   background-color: #1261c3;
   transition: transform .25s ease-out, -webkit-transform .25s ease-out;
 }

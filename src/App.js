@@ -1,29 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import RobotList from './components/RobotList'
 import SearchBar from './components/SearchBar'
+
+import { connect } from 'react-redux'
+import { fetchRobots, searchValue } from './actions/robotActions'
 
 import { Container, Row, Col } from 'reactstrap'
 
 class App extends Component {
 
-  state = {
-    robots: [],
-    search: ''
-  }
-
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(res => res.json())
-      .then(data => this.setState({ robots: data }))
-      .catch(err => console.log(err))
-  }
-
-  handelSearch = e => {
-    this.setState({ search: e.target.value })
+    this.props.fetchRobots();
   }
 
   render() {
-    const { robots, search } = this.state;
+    const { robots, search } = this.props.robot;
     const filteredRobots = robots.filter(robot => robot.name.toLowerCase().includes(search.toLowerCase()));
     return (
       <div className="text-center">
@@ -31,7 +23,7 @@ class App extends Component {
         <Container>
           <Row className="mb-5">
             <Col sm={{ size: 6, offset: 3 }}>
-              <SearchBar handelChange={ this.handelSearch }/>
+              <SearchBar handelChange={ this.props.searchValue }/>
             </Col>
           </Row>
           <Row className="mb-2">
@@ -43,4 +35,15 @@ class App extends Component {
   }
 }
 
-export default App
+App.propTypes = {
+  fetchRobots: PropTypes.func.isRequired,
+  searchValue: PropTypes.func.isRequired,
+  robot: PropTypes.object.isRequired
+}
+
+// allows us to use the state in a form of props inside the app component
+const mapStateToProps = state => ({
+  robot: state.robot
+})
+
+export default connect(mapStateToProps, { fetchRobots, searchValue })(App)

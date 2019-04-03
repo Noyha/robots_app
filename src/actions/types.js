@@ -1,0 +1,3 @@
+export const FETCH_ROBOTS = 'GET_ROBOTS'
+export const SEARCH_VALUE = 'SEARCH_VALUE'
+export const LOADING_ROBOTS = 'LOADING_ROBOTS'
