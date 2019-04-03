@@ -1,6 +1,6 @@
 ## Robots React App
 
-git clone <repository url>
+git clone https://github.com/Noyha/robots_app.git
 
 npm install
 
